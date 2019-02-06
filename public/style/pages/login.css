@@ -1,0 +1,45 @@
+
+
+.login {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.login a, .login p {
+  margin: 10px;
+}
+
+.login_page label, .login_page input{
+  display: inline-block;
+  width: 140px;
+}
+
+.login_page button {
+  margin-top: 20px;
+}
+
+.animated {
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-name: bounce;
+  animation-iteration-count:  infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-30px);}
+  60% {transform: translateY(-15px);}
+}
+.bounce {
+  animation-name: bounce;
+}

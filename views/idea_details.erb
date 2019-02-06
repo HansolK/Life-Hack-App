@@ -1,0 +1,15 @@
+<div class="detail_page">
+  <h1>Let Me Help You To Fix Your Problem!</h1>
+  <p>Writer: <%=@user.name%></p>
+  <p>Title: <%=@idea.title%></p>
+  <p>How to fix this problem? <%=@idea.description%></p>
+  <%if logged_in? && @idea.user_id == current_user.id%>
+    <div>
+      <form action="/ideas/<%=@idea.id%>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button>Delete</button> 
+      <a href="/ideas/detail/<%=@idea.id%>/edit">edit</a>
+      </form>
+    </div>
+  <%end%>
+</div>

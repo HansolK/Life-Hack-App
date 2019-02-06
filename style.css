@@ -1,0 +1,39 @@
+@import "/style/pages/list_ideas.css";
+@import "/style/components/wrapper.css";
+@import "/style/components/content.css";
+@import "/style/components/button.css";
+@import "/style/pages/login.css";
+@import "/style/pages/my_ideas.css";
+@import "/style/pages/detail_page.css";
+
+
+body {
+  font-family: 'Mali', cursive;
+  margin: 0;
+}
+
+
+.letter1 {
+  font-size: 150%;
+  color: coral;
+}
+
+.letter2 {
+  font-size: 150%;
+  color: lightseagreen;
+}
+
+.letter3 {
+  font-size: 150%;
+  color: palevioletred;
+}
+
+.letter4 {
+  font-size: 150%;
+  color: steelblue;
+}
+
+input {
+  padding: 5px;
+  margin: 5px;
+}

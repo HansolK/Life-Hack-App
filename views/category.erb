@@ -1,0 +1,5 @@
+<h1>Category</h1>
+
+<%@categorized_ideas.each do |idea|%>
+  <a href="/ideas/detail/<%=idea.id%>"><%=idea.title%></a>
+<%end%>

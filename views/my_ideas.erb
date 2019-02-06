@@ -1,0 +1,8 @@
+
+<div class="my_ideas">
+<h1>My ideas</h1>
+<%@ideas.each do |idea|%>
+
+  <p><a href="/ideas/detail/<%=idea.id%>"><%=idea.title%></a></p>
+<%end%>
+</div>

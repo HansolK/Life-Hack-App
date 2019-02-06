@@ -1,0 +1,4 @@
+.new_ideas > *{
+  display: flex;
+  justify-content: flex-end;
+}

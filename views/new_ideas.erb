@@ -1,0 +1,26 @@
+<h1>Do you have secret tips that help you a lot?</h1>
+<h2>Share, Enjoy and More Share!</h2>
+<form action="/ideas" method="post">
+  <div class="new_ideas" >
+    <div>
+    <label for="">Title: </label>
+    <input name="title" type="text">
+    </div>
+
+    <div>
+    <label for="">Category: </label>
+    <select name="category_id">
+      <option value="0">Select Category</option>
+      <%@categories.each do |category|%>
+      <option value="<%=category.id%>"><%=category.name%></option>
+      <%end%>
+    </select>
+    </div>
+
+    <div>
+    <label for="">Description: </label>
+    <textarea name="description" type="text" rows="4" cols="50"></textarea>
+    </div>
+  </div>
+  <button>save</button>
+</form>
