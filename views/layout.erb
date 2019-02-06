@@ -1,61 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
-  <title>Hack your life</title>
-</head>
-<body>
-  <div class="wrapper">
-    <div class="menu">
-      <nav>
-        <ul>
-        <li><a href="/">Home</a></li>
-        <li>
-        <a href="/ideas">Ideas</a>
-        <div>
-        
-        <form action="/ideas/category">
-        <span class="custom-dropdown">
-          <select name="category_id">
-            <option value="0">Choose category</option>
-            <%@categories = Category.all%>
-            <%@categories.each do |category|%>
-            <option value="<%=category.id%>"><%=category.name%></option>
-            <%end%>
-          </select>
-        </span>
-          <button>go</button>
-        </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Mali"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Dokdo"
+      rel="stylesheet"
+    />
+    <title>Hack your life</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="menu">
+        <nav>
+          <p class="logo">
+            <span class="letter1">H</span><span class="letter2">A</span
+            ><span class="letter3">C</span><span class="letter4">K</span>
+          </p>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li>
+              <a href="/ideas">Ideas</a>
+              </li>
+            <li id="choose_category" class="hidden">
+              <a href="#">Choose category</a>
+              <ul>
+                <%@categories = Category.all%> <%@categories.each do
+                |category|%>
+                <li><a href="/ideas/category/<%=category.id%>">
+                <%=category.name%></a>
+                <%end%>
+              </ul>
+            </li>
+            <li><a href="/my_ideas">My Ideas</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="main">
+        <div class="top_nav">
+          <%if logged_in? %>
+          <p>Hello, <%=current_user.name%></p>
+          <a href="/new_ideas">Add New Idea</a>
+          <button class="logout"><a href="/logout">logout</a></button>
+          <%else%>
+          <p>Hello, stranger!</p>
+          <a href="/">Login</a>
+          <a href="/join">Join</a>
+          <%end%>
         </div>
-        </li>
-        <li><a href="/my_ideas">My Ideas</a></li>
-       
-        </ul>
-      </nav>
-    </div>
-    <div class="main">
-      <div class="login">
- 
-        <p class="what">hello</p>
-   
-      <div>
-        <%if logged_in? %>
-        <p>Hello, <%=current_user.name%></p>
-        <a href="/new_ideas">Add My Idea</a>
-        <button class="logout"><a href="/logout">logout</a></button>
-        <%else%>
-        <p>Hello, stranger!</p>
-        <button>Join</button>
-        <%end%>
-      </div>
-
-      </div>
         <%= yield %>
+      </div>
     </div>
-  </div>
-</body>
+    <script src="/scripts/side_nav.js"></script>
+  </body>
 </html>

@@ -1,5 +1,7 @@
+<div class="content_margin">
 <h1>Category</h1>
 
 <%@categorized_ideas.each do |idea|%>
-  <a href="/ideas/detail/<%=idea.id%>"><%=idea.title%></a>
+<a href="/ideas/detail/<%=idea.id%>"><%=idea.title%></a>
 <%end%>
+</div>

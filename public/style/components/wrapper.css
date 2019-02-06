@@ -3,35 +3,14 @@
   height: 100vh;
   overflow: hidden;
 }
-.wrapper > .menu{
-  background-image: linear-gradient(rgba(93, 220, 235, 0.959), rgb(221, 145, 192));
-  min-width: 20%;
-}
 
 .wrapper > div:last-child {
   flex: 1;
   overflow-y: auto;
 }
 
-.menu a{
-  text-decoration: none;
-}
-
-.menu a:hover {
-  font-size: 150%;
-}
-
-.menu ul{
-  list-style: none;
-  padding: 10px;
-}
-
-.menu li {
-  margin: 10px;
-}
-
 .main {
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
+
 }

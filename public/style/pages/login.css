@@ -1,12 +1,4 @@
-
-
-.login {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.content {
+.login_page {
   display: flex;
   flex: 1;
   margin: 10px;
@@ -15,17 +7,13 @@
   text-align: center;
 }
 
-.login a, .login p {
-  margin: 10px;
-}
-
-.login_page label, .login_page input{
+.login_page form label, .login_page form input{
   display: inline-block;
   width: 140px;
 }
 
-.login_page button {
-  margin-top: 20px;
+.login_page form button {
+  margin-top: 10px;
 }
 
 .animated {

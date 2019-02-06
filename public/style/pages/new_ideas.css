@@ -1,4 +1,28 @@
-.new_ideas > *{
+.new_ideas label {
+  display: inline-block;
+  min-width: 150px;
+}
+
+.new_ideas div {
+  display: flex;
+  margin-top: 20px;
+}
+
+.new_ideas label[for="description"]{
+  vertical-align: top;
+}
+
+.new_ideas input, .new_ideas textarea {
+  padding: 5px;
+  flex: 1;
+}
+
+.new_ideas div:last-child {
   display: flex;
   justify-content: flex-end;
 }
+
+.new_ideas button {
+  margin-right: 0;
+}
+

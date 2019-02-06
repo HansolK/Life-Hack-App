@@ -1,17 +1,29 @@
 @import "/style/pages/list_ideas.css";
 @import "/style/components/wrapper.css";
-@import "/style/components/content.css";
 @import "/style/components/button.css";
 @import "/style/pages/login.css";
 @import "/style/pages/my_ideas.css";
 @import "/style/pages/detail_page.css";
-
+@import "/style/components/menu.css";
+@import "/style/components/top_nav.css";
+@import "/style/pages/new_ideas.css";
+.content_margin {
+  padding: 0 20px;
+  max-width: 750px;
+}
 
 body {
   font-family: 'Mali', cursive;
   margin: 0;
 }
 
+.logo {
+  font-family: 'Dokdo', cursive;
+  margin: 5px 20px;
+  font-size: 40px;
+  padding: 5px;
+
+}
 
 .letter1 {
   font-size: 150%;
@@ -33,7 +45,3 @@ body {
   color: steelblue;
 }
 
-input {
-  padding: 5px;
-  margin: 5px;
-}

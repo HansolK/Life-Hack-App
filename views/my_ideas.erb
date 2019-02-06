@@ -1,8 +1,14 @@
-
-<div class="my_ideas">
-<h1>My ideas</h1>
-<%@ideas.each do |idea|%>
-
-  <p><a href="/ideas/detail/<%=idea.id%>"><%=idea.title%></a></p>
-<%end%>
+<div class="my_ideas content_margin">
+  <h1>My ideas</h1>
+  <%unless logged_in?%>
+  <p>You haven't logged in!</p>
+  <%end%> <% if logged_in? && @ideas.count ==0 %>
+  <p>You haven't posted any ideas!</p>
+  <%else%> <%@ideas.each do |idea|%>
+    <div>
+    <a href="/ideas/detail/<%=idea.id%>"><%=idea.title%></a>
+    <p>Written at: <%=idea.created_at%></p>
+    </div>
+    <%end%> 
+  <%end%>
 </div>

@@ -65,9 +65,14 @@ get '/ideas/detail/:id/edit' do
 end
 
 
-get '/ideas/category' do
+get '/ideas/category/:category_id' do
   @categorized_ideas = Idea.where(category_id: params["category_id"])
   erb :category
+end
+
+
+get '/join' do
+  erb :join
 end
 
 post '/session' do
@@ -78,7 +83,7 @@ post '/session' do
     redirect '/ideas'
   else
     if params["button"] == "join"
-      erb :join
+      redirect '/join'
     else
       erb :login
     end

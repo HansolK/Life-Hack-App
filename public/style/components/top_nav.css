@@ -1,0 +1,10 @@
+.top_nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 30px;
+}
+
+.top_nav a, .top_nav p {
+  margin: 5px;
+}

@@ -1,23 +1,25 @@
-<div class="content">
+<div class="login_page">
   <div>
-  <h1>Find Out everything to make your life</h1>
-  <h1>
-    <span class="letter1 animated bounce">H</span>appier, <span class="letter2 animated bounce">A</span>mazing, <span class="letter3 animated bounce">C</span>omfortable and <span class="letter4 animated bounce">K</span>eep up!
-  </h1>
-  <%unless logged_in?%>
-    <form class="login_page" action="/session" method="post">
+    <h1>Find Out everything to make your life</h1>
+    <h1>
+      <span class="letter1 animated bounce">H</span>appier,
+      <span class="letter2 animated bounce">A</span>mazing,
+      <span class="letter3 animated bounce">C</span>omfortable and
+      <span class="letter4 animated bounce">K</span>eep up!
+    </h1>
+    <% unless logged_in? %>
+    <form action="/session" method="post">
       <div>
-      <label for="">Email</label>
-      <input name="email" placeholder="enter your email address"/>
+        <label for="">Email</label>
+        <input name="email" placeholder="enter your email address" />
       </div>
       <div>
-      <label for="">Password</label>
-      <input name="password" type="password"/>
+        <label for="">Password</label>
+        <input name="password" type="password" />
       </div>
       <button name="button" value="login">login</button>
-      <p>If you are not our member yet, please click the button below</p>
       <button name="button" value="join">Join</button>
     </form>
-  <%end%>
+    <%end%>
   </div>
 </div>
