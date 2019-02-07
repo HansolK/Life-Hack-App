@@ -1,20 +1,9 @@
-<div class="detail_page content_margin">
+<div class="detail_page page">
   <h1>Let Me Help You To Fix Your Problem!</h1>
   <p>Writer: <%=@user.name%></p>
   <p>Title: <%=@idea.title%></p>
   <p>How to fix this problem? <%=@idea.description%></p>
-  <p>comments</p>
-  <ul>
-    <%@comments.each do |comment|%>
-      <li><%=comment.id%></li>
-    <%end%>
-  </ul>
-  <form action="/comment/<%=@idea.id%>" method="post">
-    <% if logged_in?%>
-      <textarea name="comment" type="text"></textarea>
-      <button>share</button>
-    <%end%>
-  </form>
+  
   <%if logged_in? && @idea.user_id == current_user.id%>
     <div>
       <form action="/ideas/<%=@idea.id%>" method="post">
@@ -24,4 +13,23 @@
       </form>
     </div>
   <%end%>
+
+  <h3>Comments</h3>
+  <%@comments.each do |comment|%>
+    <div class="comment">
+      <%commenter = User.find_by(id: comment.user_id)%>
+      <p><strong><%=commenter.name%></strong>:</p>
+      <p><%=comment.content%></p>
+    </div>
+  <%end%>
+
+  <form action="/comment/<%=@idea.id%>" method="post">
+    <% if logged_in?%>
+      <h4>Share your thoughts</h4>
+      <textarea name="comment" type="text" rows="7"></textarea>
+      <div class="flex-end">
+        <button>share</button>
+      </div>
+    <%end%>
+  </form>
 </div>

@@ -1,3 +1,24 @@
 .detail_page {
-  display: inline-block;
+  overflow-y: scroll;
+}
+
+.comment {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px dashed;
+}
+
+.comment:nth-child(even) {
+  background-color: rgb(223, 242, 247);
+}
+.comment p{
+  margin: 0;
+}
+
+.detail_page textarea {
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 15px;
+  margin: 0;
+  width: 100%;
 }

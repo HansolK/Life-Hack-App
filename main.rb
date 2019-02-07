@@ -62,8 +62,7 @@ end
 get '/ideas/detail/:id' do 
   @idea = Idea.find_by(id: params["id"])
   @user = User.find_by(id: @idea.user_id)
-  @comments = Comment.where(id: @idea.id)
-
+  @comments = Comment.where(idea_id: @idea.id)
   erb :idea_details
 end
 
