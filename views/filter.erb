@@ -1,14 +1,19 @@
 <div class="content_margin">
   <h1>Search Result</h1>
-  <h2>We've found <%=@filtered_ideas.count%>
-  <%if @filtered_ideas.count > 1%>
-    ideas
+  <%if params[:search_item] == ""%>
+    <p>Sorry! We don't have anything matching with your search!</p>
+    <a href="javascript:history.back()">Go Back</a>
   <%else%>
-    idea
-  <%end%>  
-   matching with your search
-  </h2>
-  <%@filtered_ideas.each do |idea|%>
-    <a href="/ideas/detail/<%=idea.id%>"><%=idea.title%></a>
+    <h2>We've found <%=@filtered_ideas.count%>
+    <%if @filtered_ideas.count > 1%>
+      ideas
+    <%else%>
+      idea
+    <%end%>  
+    matching with your search
+    </h2>
+    <%@filtered_ideas.each do |idea|%>
+      <a href="/ideas/detail/<%=idea.id%>"><%=idea.title%></a>
+    <%end%>
   <%end%>
 </div>

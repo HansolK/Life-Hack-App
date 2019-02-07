@@ -8,9 +8,7 @@
   border: 1px dashed;
 }
 
-.comment:nth-child(even) {
-  background-color: rgb(223, 242, 247);
-}
+
 .comment p{
   margin: 0;
 }

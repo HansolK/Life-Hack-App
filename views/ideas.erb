@@ -7,8 +7,9 @@
 
 
 <div class="list_ideas_page content_margin">
+  <h1>Explore All the Hacks!</h1>
   <%@ideas.each do |idea|%> <%user=User.find_by(id: idea.user_id)%>
-  <div class="container">
+  <div class="container alternating_background">
     <a href="/ideas/detail/<%=idea.id%>">
      <p><%=idea.title.empty? ? "No title" :  idea.title%></p>
     </a>

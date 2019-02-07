@@ -1,19 +1,20 @@
 @import "/style/pages/list_ideas.css";
-@import "/style/components/wrapper.css";
-@import "/style/components/button.css";
 @import "/style/pages/login.css";
 @import "/style/pages/my_ideas.css";
 @import "/style/pages/detail_page.css";
-@import "/style/components/menu.css";
-@import "/style/components/top_nav.css";
 @import "/style/pages/new_ideas.css";
 @import "/style/pages/home_page.css";
+@import "/style/pages/category.css";
+@import "/style/components/wrapper.css";
+@import "/style/components/button.css";
+@import "/style/components/menu.css";
+@import "/style/components/top_nav.css";
 @import "/style/components/about.css";
 @import "/style/components/search.css";
 @import "/style/components/error.css";
-@import "/style/utilities/layout.css";
 @import "/style/components/page.css";
-
+@import "/style/components/list-background.css";
+@import "/style/utilities/layout.css";
 .content_margin {
   padding: 0 20px;
   max-width: 750px;

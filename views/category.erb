@@ -7,6 +7,7 @@
 
 
 <div class="content_margin">
+
 <h1>Category for "<%=@category_num.name%>" </h1>
 <%if @categorized_ideas.count == 0 %>
   <p>No ideas about this category</p>
@@ -14,7 +15,11 @@
   <a href="/new_ideas">Add New Idea</a>
 <%else%>
   <%@categorized_ideas.each do |idea|%>
-  <p><a href="/ideas/detail/<%=idea.id%>"><%=idea.title%></a></p>
+  <div class="category alternating_background">
+    <p><a href="/ideas/detail/<%=idea.id%>"><%=idea.title%></a></p>
+    <%@user = User.find_by(id: idea.user_id)%>
+    <p>Written by: <%=@user.name%></p>
+  </div>
   <%end%>
 <%end%>
 </div>

@@ -16,7 +16,7 @@
 
   <h3>Comments</h3>
   <%@comments.each do |comment|%>
-    <div class="comment">
+    <div class="comment alternating_background">
       <%commenter = User.find_by(id: comment.user_id)%>
       <p><strong><%=commenter.name%></strong>:</p>
       <p><%=comment.content%></p>

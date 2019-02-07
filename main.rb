@@ -77,6 +77,7 @@ get '/ideas/category/:category_id' do
   @categorized_ideas = Idea.where(category_id: params["category_id"])
   @category_num = Category.find_by(id: params["category_id"])
   erb :category
+
 end
 
 get '/ideas/filter' do
