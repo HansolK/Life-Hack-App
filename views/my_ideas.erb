@@ -6,7 +6,10 @@
   <p>You haven't posted any ideas!</p>
   <%else%> <%@ideas.each do |idea|%>
     <div>
-    <a href="/ideas/detail/<%=idea.id%>"><%=idea.title%></a>
+    <a href="/ideas/detail/<%=idea.id%>">
+    
+    <%=idea.title.empty? ? "No title" :  idea.title%></a>
+    
     <p>Written at: <%=idea.created_at%></p>
     </div>
     <%end%> 

@@ -21,10 +21,15 @@ CREATE TABLE ideas(
   catergory_id INTEGER
 );
 
+CREATE TABLE comments(
+  id SERIAL PRIMARY KEY,
+  content TEXT,
+  idea_id INTEGER
+);
 
 INSERT INTO users(name, email, password_digest) VALUES('Hansol', 'hansol@ga.co.au', 'pudding')
 
-
+INSERT INTO comments(content, idea_id) VALUES ('awsome idea! thank you for sharing!', 16);
 INSERT INTO catergories(name) VALUES('clothes');
 INSERT INTO catergories(name) VALUES('cars');
 INSERT INTO catergories(name) VALUES('babies');

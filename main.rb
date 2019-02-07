@@ -7,6 +7,7 @@ require_relative 'db_config'
 require_relative 'models/category'
 require_relative 'models/idea'
 require_relative 'models/user'
+require_relative 'models/comment'
 enable :sessions
 
 helpers do
@@ -23,9 +24,16 @@ helpers do
 end
 
 get '/' do
+  erb :index
+end
+
+get '/login' do
   erb :login
 end
 
+get '/join' do
+  erb :join
+end
 
 get '/new_ideas' do
   @categories = Category.all
@@ -54,6 +62,8 @@ end
 get '/ideas/detail/:id' do 
   @idea = Idea.find_by(id: params["id"])
   @user = User.find_by(id: @idea.user_id)
+  @comments = Comment.where(id: @idea.id)
+
   erb :idea_details
 end
 
@@ -64,15 +74,16 @@ get '/ideas/detail/:id/edit' do
 
 end
 
-
 get '/ideas/category/:category_id' do
   @categorized_ideas = Idea.where(category_id: params["category_id"])
+  @category_num = Category.find_by(id: params["category_id"])
   erb :category
 end
 
-
-get '/join' do
-  erb :join
+get '/ideas/filter' do
+  search_term = params["search_item"]
+  @filtered_ideas = Idea.where("lower(title) LIKE lower(?)", "%#{search_term}%")
+  erb :filter
 end
 
 post '/session' do
@@ -109,6 +120,17 @@ post '/ideas' do
   idea.save
   redirect '/ideas'
 end
+
+post '/comment/:id' do
+  c1 = Comment.new
+  c1.user_id = current_user.id
+  c1.content = params["comment"]
+  c1.idea_id = params[:id]
+  c1.save
+  redirect "/ideas/detail/#{c1.idea_id}"
+end
+
+
 
 put '/ideas/:id' do
   idea = Idea.find(params[:id])

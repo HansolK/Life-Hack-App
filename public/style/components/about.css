@@ -1,0 +1,29 @@
+.about {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.about img {
+  align-items: center;
+}
+.about div {
+  padding: 10px;
+}
+
+.about .a1 {
+  display: flex;
+  background-color: rgb(135, 200, 250);
+}
+.about .a2 {
+  display: flex;
+  background-color: rgb(247, 161, 190);
+}
+
+.about .a3 {
+  display: flex;
+  background-color: rgb(113, 238, 197);
+}
+
+i {
+  size: 120%;
+}

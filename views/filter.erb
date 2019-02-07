@@ -1,0 +1,14 @@
+<div class="content_margin">
+  <h1>Search Result</h1>
+  <h2>We've found <%=@filtered_ideas.count%>
+  <%if @filtered_ideas.count > 1%>
+    ideas
+  <%else%>
+    idea
+  <%end%>  
+   matching with your search
+  </h2>
+  <%@filtered_ideas.each do |idea|%>
+    <a href="/ideas/detail/<%=idea.id%>"><%=idea.title%></a>
+  <%end%>
+</div>

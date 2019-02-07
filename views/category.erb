@@ -1,7 +1,20 @@
-<div class="content_margin">
-<h1>Category</h1>
+<div class="search_bar">
+  <form action="/ideas/filter">
+  <input name="search_item"type="text"/>
+  <button class="search">search</button>
+  </form>
+</div>
 
-<%@categorized_ideas.each do |idea|%>
-<a href="/ideas/detail/<%=idea.id%>"><%=idea.title%></a>
+
+<div class="content_margin">
+<h1>Category for "<%=@category_num.name%>" </h1>
+<%if @categorized_ideas.count == 0 %>
+  <p>No ideas about this category</p>
+  <p>Why don't you start one?</p>
+  <a href="/new_ideas">Add New Idea</a>
+<%else%>
+  <%@categorized_ideas.each do |idea|%>
+  <p><a href="/ideas/detail/<%=idea.id%>"><%=idea.title%></a></p>
+  <%end%>
 <%end%>
 </div>

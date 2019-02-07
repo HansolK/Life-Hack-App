@@ -9,9 +9,12 @@
 
 .login_page form label, .login_page form input{
   display: inline-block;
+  margin: 8px;
   width: 140px;
 }
-
+.login_page form input {
+  padding: 5px;
+}
 .login_page form button {
   margin-top: 10px;
 }

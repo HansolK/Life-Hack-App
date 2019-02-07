@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/css?family=Mali"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link
       href="https://fonts.googleapis.com/css?family=Dokdo"
       rel="stylesheet"
@@ -23,7 +24,7 @@
             <span class="letter1">H</span><span class="letter2">A</span
             ><span class="letter3">C</span><span class="letter4">K</span>
           </p>
-          <ul>
+          <ul cllass="menu_list">
             <li><a href="/">Home</a></li>
             <li>
               <a href="/ideas">Ideas</a>
@@ -47,10 +48,10 @@
           <%if logged_in? %>
           <p>Hello, <%=current_user.name%></p>
           <a href="/new_ideas">Add New Idea</a>
-          <button class="logout"><a href="/logout">logout</a></button>
+          <a class="logout" href="/logout">logout</a></button>
           <%else%>
           <p>Hello, stranger!</p>
-          <a href="/">Login</a>
+          <a href="/login">Login</a>
           <a href="/join">Join</a>
           <%end%>
         </div>

@@ -7,6 +7,10 @@
 @import "/style/components/menu.css";
 @import "/style/components/top_nav.css";
 @import "/style/pages/new_ideas.css";
+@import "/style/pages/home_page.css";
+@import "/style/components/about.css";
+@import "/style/components/search.css";
+@import "/style/components/error.css";
 .content_margin {
   padding: 0 20px;
   max-width: 750px;
