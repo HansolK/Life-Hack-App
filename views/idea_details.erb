@@ -1,8 +1,8 @@
 <div class="detail_page page">
-  <h1>Let Me Help You To Fix Your Problem!</h1>
-  <p>Writer: <%=@user.name%></p>
-  <p>Title: <%=@idea.title%></p>
-  <p>How to fix this problem? <%=@idea.description%></p>
+  <h1><%=@idea.title%></h1>
+  <p>By <%=@user.name%></p>
+  <p><strong>How?</strong></p>
+  <p><%=@idea.description%></p>
   
   <%if logged_in? && @idea.user_id == current_user.id%>
     <div>
