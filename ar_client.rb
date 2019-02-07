@@ -6,4 +6,4 @@ require_relative 'models/user'
 require_relative 'models/idea'
 require_relative 'models/comment'
 
-binding.pry
+# binding.pry

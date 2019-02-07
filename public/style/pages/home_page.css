@@ -1,19 +1,15 @@
 .home_page {
-  height: 100vh;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .home_page .banner {
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
-.banner div {
-  justify-content: center;
-  align-items: center;
-}
 
-.about {
-  justify-content: center;
-  align-items: center;
-}

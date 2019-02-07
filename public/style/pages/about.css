@@ -1,8 +1,9 @@
 .about {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
+
+
 .about img {
   align-items: center;
 }
@@ -26,4 +27,5 @@
 
 i {
   size: 120%;
+  padding: 10px;
 }

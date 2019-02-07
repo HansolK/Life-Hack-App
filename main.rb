@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'sinatra/reloader'
 require 'pry'
 require 'active_record'
 
@@ -31,6 +30,7 @@ get '/login' do
   erb :login
 end
 
+
 get '/logout' do
   session[:user_id] = nil
   redirect '/'
@@ -38,6 +38,22 @@ end
 
 get '/join' do
   erb :join
+end
+
+
+post '/session' do
+  user = User.find_by(email: params["email"])
+
+  if user && user.authenticate(params["password"])
+    session[:user_id] = user.id
+    redirect '/ideas'
+  else
+    if params["button"] == "join"
+      redirect '/join'
+    else
+      erb :login
+    end
+  end
 end
 
 get '/ideas' do
@@ -84,23 +100,6 @@ get '/categories/:category_id' do
 
 end
 
-
-
-post '/session' do
-  user = User.find_by(email: params["email"])
-
-  if user && user.authenticate(params["password"])
-    session[:user_id] = user.id
-    redirect '/ideas'
-  else
-    if params["button"] == "join"
-      redirect '/join'
-    else
-      erb :login
-    end
-  end
-end
-
 post '/user' do
  user = User.new
  user.name = params["name"]
@@ -141,6 +140,7 @@ put '/ideas/:id' do
   idea.save
   redirect "/ideas/#{idea.id}"
 end
+
 
 delete '/ideas/:id' do
   delete_item = Idea.find_by(id: params[:id])
