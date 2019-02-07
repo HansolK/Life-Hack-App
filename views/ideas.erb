@@ -10,7 +10,7 @@
   <h1>Explore All the Hacks!</h1>
   <%@ideas.each do |idea|%> <%user=User.find_by(id: idea.user_id)%>
   <div class="container alternating_background">
-    <a href="/ideas/detail/<%=idea.id%>">
+    <a href="/ideas/<%=idea.id%>">
      <p><%=idea.title.empty? ? "No title" :  idea.title%></p>
     </a>
     <p>written by: <%=user.name%></p>

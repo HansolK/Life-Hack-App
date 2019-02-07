@@ -16,7 +16,7 @@
 <%else%>
   <%@categorized_ideas.each do |idea|%>
   <div class="category alternating_background">
-    <p><a href="/ideas/detail/<%=idea.id%>"><%=idea.title%></a></p>
+    <p><a href="/ideas/<%=idea.id%>"><%=idea.title%></a></p>
     <%@user = User.find_by(id: idea.user_id)%>
     <p>Written by: <%=@user.name%></p>
   </div>

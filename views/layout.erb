@@ -34,7 +34,7 @@
               <ul>
                 <%@categories = Category.all%> <%@categories.each do
                 |category|%>
-                <li><a href="/ideas/category/<%=category.id%>">
+                <li><a href="/categories/<%=category.id%>">
                 <%=category.name%></a>
                 <%end%>
               </ul>
@@ -47,7 +47,7 @@
         <div class="top_nav">
           <%if logged_in? %>
           <p>Hello, <%=current_user.name%></p>
-          <a href="/new_ideas">Add New Idea</a>
+          <a href="/create-idea">Add New Idea</a>
           <a class="logout" href="/logout">logout</a></button>
           <%else%>
           <p>Hello, stranger!</p>

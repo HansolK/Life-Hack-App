@@ -31,15 +31,14 @@ get '/login' do
   erb :login
 end
 
+get '/logout' do
+  session[:user_id] = nil
+  redirect '/'
+end
+
 get '/join' do
   erb :join
 end
-
-get '/new_ideas' do
-  @categories = Category.all
-  erb :new_ideas
-end
-
 
 get '/ideas' do
   @ideas = Idea.all
@@ -47,10 +46,15 @@ get '/ideas' do
   erb :ideas
 end
 
+get '/ideas/filter' do
+  search_term = params["search_item"]
+  @filtered_ideas = Idea.where("lower(title) LIKE lower(?)", "%#{search_term}%")
+  erb :filter
+end
 
-get '/logout' do
-  session[:user_id] = nil
-  redirect '/'
+get '/create-idea' do
+  @categories = Category.all
+  erb :new_ideas
 end
 
 get '/my_ideas' do
@@ -58,33 +62,28 @@ get '/my_ideas' do
   erb :my_ideas
 end
 
-
-get '/ideas/detail/:id' do 
+get '/ideas/:id' do 
   @idea = Idea.find_by(id: params["id"])
   @user = User.find_by(id: @idea.user_id)
   @comments = Comment.where(idea_id: @idea.id)
   erb :idea_details
 end
 
-get '/ideas/detail/:id/edit' do
+get '/ideas/:id/edit' do
   @idea = Idea.find_by(id: params["id"])
   @categories = Category.all
   erb :edit
 
 end
 
-get '/ideas/category/:category_id' do
+get '/categories/:category_id' do
   @categorized_ideas = Idea.where(category_id: params["category_id"])
   @category_num = Category.find_by(id: params["category_id"])
   erb :category
 
 end
 
-get '/ideas/filter' do
-  search_term = params["search_item"]
-  @filtered_ideas = Idea.where("lower(title) LIKE lower(?)", "%#{search_term}%")
-  erb :filter
-end
+
 
 post '/session' do
   user = User.find_by(email: params["email"])
@@ -127,7 +126,7 @@ post '/comment/:id' do
   c1.content = params["comment"]
   c1.idea_id = params[:id]
   c1.save
-  redirect "/ideas/detail/#{c1.idea_id}"
+  redirect "/ideas/#{c1.idea_id}"
 end
 
 
@@ -139,7 +138,7 @@ put '/ideas/:id' do
   # raise params[:category_id].to_s
   idea.category_id = params[:category_id]
   idea.save
-  redirect "/ideas/detail/#{idea.id}"
+  redirect "/ideas/#{idea.id}"
 end
 
 delete '/ideas/:id' do
