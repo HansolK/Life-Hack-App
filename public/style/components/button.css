@@ -1,12 +1,32 @@
-button {
-  padding: 8px;
+.button {
+  display: inline-block;
+  padding: 0 2em;
+  min-width: 60px;
+  text-align: center;
+  vertical-align: middle;
   border-radius: 10px;
+  border:1px solid mediumturquoise;
+  line-height: 30px;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
 }
 
-button:hover{
+.button:hover{
   background-color: mediumturquoise;
+  cursor: pointer;
 }
+
+
+.button--delete {
+  border-color: rgb(250, 118, 118);
+}
+.button--delete:hover {
+  background-color: rgb(247, 93, 93);
+}
+
 
 .logout a{
   text-decoration: none;
 }
+
