@@ -41,16 +41,17 @@ get '/join' do
 end
 
 get '/ideas' do
-  @ideas = Idea.all
+  if params[:search_item] == ''
+    @ideas = []
+  elsif params[:search_item] != nil
+    @ideas = Idea.where("lower(title) LIKE lower(?)", "%#{params[:search_item]}%")
+  else 
+    @ideas = Idea.all
+  end
   @users = current_user
   erb :ideas
 end
 
-get '/ideas/filter' do
-  search_term = params["search_item"]
-  @filtered_ideas = Idea.where("lower(title) LIKE lower(?)", "%#{search_term}%")
-  erb :filter
-end
 
 get '/create-idea' do
   @categories = Category.all
