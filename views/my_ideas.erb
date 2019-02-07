@@ -1,17 +1,19 @@
-<div class="my_ideas content_margin">
+<div class="my_ideas page">
   <h1>My ideas</h1>
   <%unless logged_in?%>
-  <p>You haven't <a href="/login">logged in</a>!</p>
-  <%end%> <% if logged_in? && @ideas.count ==0 %>
-  <p>You haven't posted any ideas!</p>
-  <%else%> <%@ideas.each do |idea|%>
-    <div>
-    <a href="/ideas/<%=idea.id%>">
-    
-    <%=idea.title.empty? ? "No title" :  idea.title%></a>
-    
-    <p>Written at: <%=idea.created_at%></p>
+    <p>You haven't <a href="/login">logged in</a>!</p>
+  <%end%>
+  <% if logged_in? && @ideas.count ==0 %>
+    <p>You haven't posted any ideas!</p>
+  <%else%>
+    <div class="ideas-list">
+      <%@ideas.each do |idea|%>
+        <div>
+          <p><a href="/ideas/<%=idea.id%>">
+            <%=idea.title.empty? ? "No title" :  idea.title%></a></p>
+          <p>Written at: <%=idea.created_at%></p>
+        </div>
+      <%end%>
     </div>
-    <%end%> 
   <%end%>
 </div>

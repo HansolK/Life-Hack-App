@@ -1,25 +1,24 @@
 <div class="search_bar">
   <form action="/ideas">
-  <input name="search_item"type="text"/>
-  <button class="button">search</button>
+    <input name="search_item"type="text"/>
+    <button class="button">search</button>
   </form>
 </div>
-
-
 <div class="page">
-
-<h1>Category for "<%=@category_num.name%>" </h1>
-<%if @categorized_ideas.count == 0 %>
-  <p>No ideas about this category</p>
-  <p>Why don't you start one?</p>
-  <a href="/new_ideas">Add New Idea</a>
-<%else%>
-  <%@categorized_ideas.each do |idea|%>
-  <div class="category alternating_background">
-    <p><a href="/ideas/<%=idea.id%>"><%=idea.title%></a></p>
-    <%@user = User.find_by(id: idea.user_id)%>
-    <p>Written by: <%=@user.name%></p>
+  <h1>Category for "<%=@category_num.name%>" </h1>
+  <%if @categorized_ideas.count == 0 %>
+    <p>No ideas about this category</p>
+    <p>Why don't you start one?</p>
+    <a href="/new_ideas">Add New Idea</a>
+  <%else%>
+  <div class="ideas-list">
+    <%@categorized_ideas.each do |idea|%>
+      <div class="category alternating_background">
+        <p><a href="/ideas/<%=idea.id%>"><%=idea.title%></a></p>
+        <%@user = User.find_by(id: idea.user_id)%>
+        <p>Written by: <%=@user.name%></p>
+      </div>
+    <%end%>
   </div>
   <%end%>
-<%end%>
 </div>

@@ -1,0 +1,8 @@
+.ideas-list > * {
+  padding: 10px
+}
+
+.ideas-list > *:nth-child(even) {
+  background-color:rgb(223, 242, 247);
+}
+
