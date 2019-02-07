@@ -1,9 +1,12 @@
 
 .list_ideas_page div{
-  display: flex;
   overflow-y: auto;
 }
 
-.list_ideas_page a, .list_ideas_page p {
-  margin-right: 20px;
+.list_ideas_page div:nth-child(even) {
+  background-color: rgb(223, 242, 247)
+}
+
+.list_ideas_page .container {
+  padding: 10px;
 }
