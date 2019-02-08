@@ -30,7 +30,7 @@
           <p><%=idea.title.empty? ? "No title" :  idea.title%></p>
         </a>
         <p>written by: <%=user.name%></p>
-        <p>written at: <%=idea.created_at%></p>
+        <p>written at: <%=idea.created_at.localtime%></p>
       </div>
     <%end%>
   </div>

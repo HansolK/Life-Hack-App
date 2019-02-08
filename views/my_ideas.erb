@@ -11,7 +11,7 @@
         <div>
           <p><a href="/ideas/<%=idea.id%>">
             <%=idea.title.empty? ? "No title" :  idea.title%></a></p>
-          <p>Written at: <%=idea.created_at%></p>
+          <p>Written at: <%=idea.created_at.localtime%></p>
         </div>
       <%end%>
     </div>
