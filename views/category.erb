@@ -9,7 +9,7 @@
   <%if @categorized_ideas.count == 0 %>
     <p>No ideas about this category</p>
     <p>Why don't you start one?</p>
-    <a href="/new_ideas">Add New Idea</a>
+    <a href="/create-idea">Add New Idea</a>
   <%else%>
   <div class="ideas-list">
     <%@categorized_ideas.each do |idea|%>
