@@ -30,3 +30,7 @@
   text-decoration: none;
 }
 
+.save_button {
+  display: flex;
+  justify-content: flex-end;
+}

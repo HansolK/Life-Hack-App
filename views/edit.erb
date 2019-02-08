@@ -1,4 +1,4 @@
-<form class="new_ideas" action="/ideas/<%=@idea.id%>" method="post">
+<form class="new_ideas page" action="/ideas/<%=@idea.id%>" method="post">
   <input type="hidden" name="_method" value="put" />
 
   <div>
@@ -26,5 +26,7 @@
       value="<%=@idea.description%>"
     ></textarea>
   </div>
-  <button>save</button>
+  <div class="save_button">
+    <button class="button">save</button>
+  </div>
 </form>
