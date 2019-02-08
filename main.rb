@@ -56,7 +56,8 @@ post '/session' do
   end
 end
 
-get '/ideas' do
+get '/ideas' do 
+  binding.pry
   if params[:search_item] == ''
     @ideas = []
   elsif params[:search_item] != nil
