@@ -1,5 +1,5 @@
 # Hack Your LIFE!
-Here is my [website]("https://raw.githubusercontent.com/HansolK/Life-Hack-App/master/db.dump")! 
+Here is my [website]("https://aqueous-bastion-92959.herokuapp.com/")! 
 
 ## Description
 
