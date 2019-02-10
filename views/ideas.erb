@@ -8,17 +8,16 @@
   <%if params[:search_item] != nil%>
     <h1>Search Result</h1>
     <%if params[:search_item] == ""%>
-      <p>Sorry! We don't have anything matching with your search!</p>
-      <a href="javascript:history.back()">Go Back</a>
+      <p>You haven't put anything for us to look!</p>
     <%else%>
-      <h2>We've found <%=@ideas.count%>
         <%if @ideas.count > 1%>
-          ideas
+          <p>We've found <%=@ideas.count%> ideas matching with your search
+        <%elsif @ideas.count == 1%>
+          <p>We've found <%=@ideas.count%> idea matching with your search
         <%else%>
-          idea
+           Sorry, We don't have anything to match with your search!
         <%end%>
-        matching with your search
-      </h2>
+        </p>
     <%end%>
   <%else%>
     <h1>Explore All the Hacks!</h1>

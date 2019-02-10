@@ -1,5 +1,7 @@
 <div class="detail_page page">
-  <h1><%=@idea.title%></h1>
+  <div class="detail_page_header">
+  <h1><%=@idea.title%></h1><p><a class="goback" href="javascript:history.back()">Go Back</a></p>
+  </div>
   <p>By <%=@user.name%></p>
   <p><strong>How?</strong></p>
   <p><%=@idea.description%></p>

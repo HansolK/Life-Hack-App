@@ -20,3 +20,13 @@
   margin: 0;
   width: 100%;
 }
+
+.detail_page_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.detail_page_header > * {
+  margin: 0;
+}

@@ -1,8 +1,11 @@
-
-.list_ideas_page div{
-  overflow-y: auto;
+.list_ideas_page {
+  overflow-y: scroll;
 }
 
 .list_ideas_page .container {
   padding: 10px;
+}
+
+.list_ideas_page a {
+  margin-top: 10px;
 }
