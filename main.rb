@@ -118,6 +118,7 @@ post '/ideas' do
   idea.category_id = params[:category_id]
   idea.save
   redirect '/ideas'
+  
 end
 
 post '/comment/:id' do
